@@ -12,3 +12,6 @@ pids
 
 # Webstorm
 .idea
+
+# Docker image
+.dockerimage
