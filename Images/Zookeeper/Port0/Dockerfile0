@@ -7,7 +7,7 @@ RUN apk add --no-cache \
     bash \
     su-exec
 
-ENV ZOO_USER=zookeeper \
+ENV ZOO_USER=zookeeper0 \
     ZOO_DIR_CONF=/conf \
     ZOO_DIR_DATA=/data \
     ZOO_DIR_LOG=/datalog \
@@ -49,8 +49,8 @@ EXPOSE $ZOO_PORT_CLIENT $ZOO_PORT_CONNECTION $ZOO_PORT_ELECTION
 ENV PATH=$PATH:/$DISTRO_NAME/bin \
     ZOOCFGDIR=$ZOO_DIR_CONF
 
-COPY docker-entrypoint.sh /
-RUN chmod +x /docker-entrypoint.sh
+COPY docker-entrypoint0.sh /
+RUN chmod +x /docker-entrypoint0.sh
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint0.sh"]
 CMD ["zkServer.sh", "start-foreground"]

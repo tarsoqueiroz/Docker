@@ -6,7 +6,13 @@ Fast notes and links to flush my mind.
 ```
 docker build -t tarsoqueiroz/myimage:v0.0.0 .  
 ```
- 
+
+or
+
+```
+docker build -t tarsoqueiroz/myimage:v0.0.0 -f MyDockerfile .  
+```
+
  ## Copy to transfer
  
 ```
@@ -18,4 +24,3 @@ docker save -o myimage.outputfile tarsoqueiroz/myimage:v0.0.0
 ```
 docker load -i myimage.outputfile
 ```
-
