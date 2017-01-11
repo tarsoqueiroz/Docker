@@ -49,6 +49,47 @@ or
 ```
 docker run -it --link ksandra:ksandrapp --rm cassandra cqlsh cassandra:3.9
 ```
+* Removing node
+
+```
+root@station# docker exec -i -t ksandra1ne sh -c 'nodetool status'
+
+Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address      Load       Tokens       Owns (effective)  Host ID                               Rack
+UN  172.17.0.7   303.53 KiB  256          49.5%             3033029e-9606-416e-ae37-dde7d7b64471  rack1
+UN  172.17.0.8   113.57 KiB  256          49.6%             39025018-4df7-46be-952b-316e7187b87a  rack1
+DN  172.17.0.27  ?          256          51.2%             2a161194-5315-423c-ba39-74c9b9d4d468  rack1
+DN  172.17.0.28  ?          256          49.7%             dcb5d6a2-5861-4cd1-882e-bc38192184b2  rack1
+
+root@station# docker exec -i -t ksandra1ne sh -c 'nodetool removenode 2a161194-5315-423c-ba39-74c9b9d4d468'
+
+Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address      Load       Tokens       Owns (effective)  Host ID                               Rack
+UN  172.17.0.7   308.28 KiB  256          49.5%             3033029e-9606-416e-ae37-dde7d7b64471  rack1
+UN  172.17.0.8   123.69 KiB  256          49.6%             39025018-4df7-46be-952b-316e7187b87a  rack1
+DL  172.17.0.27  ?          256          51.2%             2a161194-5315-423c-ba39-74c9b9d4d468  rack1
+DN  172.17.0.28  ?          256          49.7%             dcb5d6a2-5861-4cd1-882e-bc38192184b2  rack1
+
+root@station# docker exec -i -t ksandra1ne sh -c 'nodetool removenode force'RemovalStatus: Removing token (-9218062038368652755). Waiting for replication confirmation from [/172.17.0.8].
+
+root@station# docker exec -i -t ksandra1ne sh -c 'nodetool status'
+
+Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address      Load       Tokens       Owns (effective)  Host ID                               Rack
+UN  172.17.0.7   303.42 KiB  256          64.9%             3033029e-9606-416e-ae37-dde7d7b64471  rack1
+UN  172.17.0.8   123.69 KiB  256          67.3%             39025018-4df7-46be-952b-316e7187b87a  rack1
+DN  172.17.0.28  ?          256          67.8%             dcb5d6a2-5861-4cd1-882e-bc38192184b2  rack1
+```
+## Using Cassandra
 * Keyspace creation
 ```
 create keyspace demo with replication = {'class':'SimpleStrategy', 'replication_factor':2};
