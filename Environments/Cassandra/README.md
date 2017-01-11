@@ -37,10 +37,12 @@ docker run --name ksandra2wo \
 ```
 docker exec -i -t ksandra1ne sh -c 'nodetool status'
 ```
+
 * Node IP
 ```
 docker inspect --format='{{ .NetworkSettings.IPAddress }}' ksandra1ne
 ```
+
 * Connect to CQLSH
 ```
 docker run -it --link ksandra:cassandra --rm cassandra sh -c 'exec cqlsh "$CASSANDRA_PORT_9042_TCP_ADDR"'
@@ -49,6 +51,7 @@ or
 ```
 docker run -it --link ksandra:ksandrapp --rm cassandra cqlsh cassandra:3.9
 ```
+
 * Removing node
 
 ```
@@ -90,23 +93,43 @@ UN  172.17.0.8   123.69 KiB  256          67.3%             39025018-4df7-46be-9
 DN  172.17.0.28  ?          256          67.8%             dcb5d6a2-5861-4cd1-882e-bc38192184b2  rack1
 ```
 ## Using Cassandra
+
+* Available keyspaces
+```
+describe keyspaces;
+```
+or 
+```
+SELECT * FROM system_schema.keyspaces;
+```
+
+* Available tables
+```
+use <keyspace>;
+describe tables;
+```
+
 * Keyspace creation
 ```
 create keyspace demo with replication = {'class':'SimpleStrategy', 'replication_factor':2};
 use demo;
 ```
+
 * Table creation
 ```
 create table names ( id int primary key, name text );
 ```
+
 * Inserting data
 ```
 insert into names (id,name) values (1, 'gibberish');
 ```
+
 * Searching for data
 ```
 select * from demo.names;
 ```
+
 
 
 
@@ -115,5 +138,5 @@ select * from demo.names;
 * [How to set up Cassandra test cluster using Docker](http://yurisubach.com/2016/03/24/cassandra-docker-test-cluster/)
 * [Cassandra's Official Repository on Docker](https://hub.docker.com/_/cassandra/)
 * [Running Cassandra Cluster on Docker](https://medium.com/@mertcal/running-cassandra-cluster-on-docker-d9a44aafebb9#.vl76xzd9v0)
-* 
-
+* [How to list all the available keyspaces in Cassandra?](http://stackoverflow.com/questions/18712967/how-to-list-all-the-available-keyspaces-in-cassandra)
+* [Tutorialspoint - Learn Cassandra](https://www.tutorialspoint.com/cassandra/cassandra_create_table.htm)
