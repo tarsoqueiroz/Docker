@@ -1,6 +1,7 @@
 #!/bin/bash
+mkdir -p $PWD/Cassandra
 docker run --name 3BKong-DB \
-            -v    /home/tarso/Environments/3BKong/Cassandra:/var/lib/cassandra \
+            -v    $PWD/Cassandra:/var/lib/cassandra \
             -p    7000:7000 \
             -p    7001:7001 \
             -p    7199:7199 \

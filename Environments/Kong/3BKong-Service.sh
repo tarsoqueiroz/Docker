@@ -8,4 +8,4 @@ docker run --name 3BKong-Service \
            -p     8001:8001 \
            -p     7946:7946 \
            -p     7946:7946/udp \
-           -d     kong
+           -d     kong:0.9.6
