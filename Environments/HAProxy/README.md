@@ -43,7 +43,7 @@ docker run --name ZoLB \
 
 ## Monitor & Statistics
 
-Point browser to ```http://<docker container>:1936``` with ```stats:stats``` credentials.
+Point browser to **```http://<docker container>:1936```** with **```stats:stats```** credentials.
 
 ## Source
 * [Docker PUBLIC REPOSITORY - tutum/haproxy](https://hub.docker.com/r/tutum/haproxy/)
