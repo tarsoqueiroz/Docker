@@ -10,7 +10,8 @@ Dockerized Node.js web app was used for nodes to be balanced.
 
 ```
 docker run --name ZoWebApp01 \
-           -p 10.15.20.117:8081:8080 \
+           -p <docker container>:8081:8080 \
+           -p <docker container>:1936:1936 \
            -e "HTTPD_SNAME=ZoWebApp01" \
            -e "HTTPD_PORT=8080" \
            -d tarsoqueiroz/node-web-app
@@ -20,7 +21,7 @@ docker run --name ZoWebApp01 \
 
 ```
 docker run --name ZoWebApp02 \
-           -p 10.15.20.117:8082:8080 \
+           -p <docker container>:8082:8080 \
            -e "HTTPD_SNAME=ZoWebApp02" \
            -e "HTTPD_PORT=8080" \
            -d tarsoqueiroz/node-web-app
@@ -34,12 +35,15 @@ HAProxy was used for this mission.
 
 ```
 docker run --name ZoLB \
-           -p 10.15.20.117:8080:80 \
+           -p <docker container>:8080:80 \
            --link ZoWebApp01:ZoWebApp01 \
            --link ZoWebApp02:ZoWebApp02 \
            -d tutum/haproxy
 ```
 
+## Monitor & Statistics
+
+Point browser to ```http://<docker container>:1936``` with ```stats:stats``` credentials.
 
 ## Source
 * [Docker PUBLIC REPOSITORY - tutum/haproxy](https://hub.docker.com/r/tutum/haproxy/)
