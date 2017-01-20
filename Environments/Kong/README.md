@@ -1,14 +1,33 @@
-# Cassandra
+# Kong
 
 ## Useful informations
 
-Complete list for current available ports of Cassandra:
+Complete list for current available ports of Kong:
 
 * 7199 - JMX (was 8080 pre Cassandra 0.8.xx)
 * 7000 - Internode communication (not used if TLS enabled)
 * 7001 - TLS Internode communication (used if TLS enabled)
 * 9160 - Thrift client API
 * 9042 - CQL native transport port
+
+Kong listens on several ports that must allow external traffic and are by default:
+
+* 8000 is where Kong listens for HTTP traffic.
+* 8443 for proxying HTTPS traffic.
+* 7946 which Kong uses for inter-nodes communication, and both UDP and TCP traffic should be allowed on it.
+
+Additionally, those ports are used internally and should be firewalled in production usage:
+
+* 8001 provides Kong's Admin API that you can use to operate Kong.
+* 7373 used by Kong to communicate with the local clustering agent.
+
+
+
+
+****
+O QUE SEGUE É DO CASSANDRA. REVER!!!
+****
+
 
 ## Cluster
 
