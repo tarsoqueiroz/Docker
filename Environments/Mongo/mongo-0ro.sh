@@ -7,4 +7,4 @@ docker run --name mongo0ro \
            -v     $MONGO0ROVOL:/data/db \
            -p     27017:27017 \
            -p     28017:28017 \
-           -d     mongo:3.4
+           -d     mongo:3.6
