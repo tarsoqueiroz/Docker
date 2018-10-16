@@ -1,6 +1,6 @@
 #!/bin/bash
 #ETHER0ROVOL="/home/tarso/Environments/Ethereum/Ether-0ro"
-ETHER0ROVOL="/Data/Environment/Ethereum/Ether-0ro"
+ETHER0ROVOL="/Data/Environments/Ethereum/Ether-0ro"
 echo $ETHER0ROVOL
 mkdir -p $ETHER0ROVOL
 
