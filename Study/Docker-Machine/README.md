@@ -11,6 +11,12 @@
 
 ``docker-machine create --driver virtualbox --virtualbox-disk-size "2048" --virtualbox-memory "1024" dockmach01``
 
+## Change context to docker machine
+
+``docker-machine env dockmach00``
+
+``eval $(docker-machine env dockmach00)``
+
 ## Connect to shell
 
 ``docker-machine ssh dockmach01``
