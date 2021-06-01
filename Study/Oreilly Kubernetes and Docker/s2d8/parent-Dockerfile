@@ -1,0 +1,7 @@
+ARG CODE_VERSION=20.04
+
+FROM ubuntu:${CODE_VERSION}
+
+ONBUILD RUN echo "Greeting from your parent image!" > /tmp/greetings.txt
+
+CMD ["bash"]
