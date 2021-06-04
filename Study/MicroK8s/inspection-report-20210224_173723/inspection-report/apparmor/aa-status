@@ -1,0 +1,185 @@
+apparmor module is loaded.
+161 profiles are loaded.
+118 profiles are in enforce mode.
+   /snap/core/10823/usr/lib/snapd/snap-confine
+   /snap/core/10823/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /snap/snapd/11036/usr/lib/snapd/snap-confine
+   /snap/snapd/11036/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /usr/bin/evince
+   /usr/bin/evince-previewer
+   /usr/bin/evince-previewer//sanitized_helper
+   /usr/bin/evince-thumbnailer
+   /usr/bin/evince//sanitized_helper
+   /usr/bin/man
+   /usr/lib/NetworkManager/nm-dhcp-client.action
+   /usr/lib/NetworkManager/nm-dhcp-helper
+   /usr/lib/connman/scripts/dhclient-script
+   /usr/lib/cups/backend/cups-pdf
+   /usr/lib/snapd/snap-confine
+   /usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /usr/sbin/cups-browsed
+   /usr/sbin/cupsd
+   /usr/sbin/cupsd//third_party
+   /usr/sbin/tcpdump
+   /{,usr/}sbin/dhclient
+   cri-containerd.apparmor.d
+   docker-default
+   ippusbxd
+   libreoffice-senddoc
+   libreoffice-soffice//gpg
+   libreoffice-xpdfimport
+   lsb_release
+   lxd-mk80_</var/snap/lxd/common/lxd>
+   lxd_dnsmasq-lxdbr0_</var/snap/lxd/common/lxd>
+   lxd_dnsmasq-mpbr0_</var/snap/lxd/common/lxd>
+   man_filter
+   man_groff
+   nvidia_modprobe
+   nvidia_modprobe//kmod
+   snap-update-ns.android-studio
+   snap-update-ns.audacity
+   snap-update-ns.canonical-livepatch
+   snap-update-ns.code
+   snap-update-ns.core
+   snap-update-ns.gimp
+   snap-update-ns.inkscape
+   snap-update-ns.kdenlive
+   snap-update-ns.lxd
+   snap-update-ns.microk8s
+   snap-update-ns.multipass
+   snap-update-ns.multipass-sshfs
+   snap-update-ns.obs-studio
+   snap-update-ns.opentoonz
+   snap-update-ns.photogimp
+   snap-update-ns.postman
+   snap-update-ns.simplescreenrecorder
+   snap-update-ns.snap-store
+   snap-update-ns.spotify
+   snap-update-ns.vlc
+   snap.audacity.audacity
+   snap.audacity.hook.install
+   snap.audacity.hook.post-refresh
+   snap.canonical-livepatch.canonical-livepatch
+   snap.canonical-livepatch.canonical-livepatchd
+   snap.canonical-livepatch.hook.configure
+   snap.core.hook.configure
+   snap.gimp.gimp
+   snap.gimp.hook.install
+   snap.gimp.hook.post-refresh
+   snap.inkscape.hook.configure
+   snap.inkscape.inkscape
+   snap.inkscape.viewer
+   snap.kdenlive.kdenlive
+   snap.lxd.activate
+   snap.lxd.benchmark
+   snap.lxd.buginfo
+   snap.lxd.check-kernel
+   snap.lxd.daemon
+   snap.lxd.hook.configure
+   snap.lxd.hook.install
+   snap.lxd.hook.remove
+   snap.lxd.lxc
+   snap.lxd.lxc-to-lxd
+   snap.lxd.lxd
+   snap.lxd.migrate
+   snap.multipass-sshfs.env
+   snap.multipass.gui
+   snap.multipass.hook.configure
+   snap.multipass.hook.post-refresh
+   snap.multipass.hook.pre-refresh
+   snap.multipass.hook.remove
+   snap.multipass.multipass
+   snap.multipass.multipassd
+   snap.obs-studio.eglinfo
+   snap.obs-studio.ffmpeg
+   snap.obs-studio.ffplay
+   snap.obs-studio.ffprobe
+   snap.obs-studio.glxinfo
+   snap.obs-studio.obs-studio
+   snap.obs-studio.srt-ffplay
+   snap.obs-studio.srt-file-transmit
+   snap.obs-studio.srt-live-transmit
+   snap.obs-studio.srt-tunnel
+   snap.obs-studio.vainfo
+   snap.obs-studio.vdpauinfo
+   snap.opentoonz.opentoonz
+   snap.opentoonz.tcleanup
+   snap.opentoonz.tcomposer
+   snap.opentoonz.tconverter
+   snap.opentoonz.tfarmcontroller
+   snap.opentoonz.tfarmserver
+   snap.photogimp.hook.install
+   snap.photogimp.hook.post-refresh
+   snap.photogimp.photogimp
+   snap.postman.postman
+   snap.simplescreenrecorder.simplescreenrecorder
+   snap.snap-store.hook.configure
+   snap.snap-store.snap-store
+   snap.snap-store.ubuntu-software
+   snap.snap-store.ubuntu-software-local-file
+   snap.spotify.spotify
+   snap.vlc.vlc
+43 profiles are in complain mode.
+   libreoffice-oopslash
+   libreoffice-soffice
+   snap.android-studio.android-studio
+   snap.code.code
+   snap.code.url-handler
+   snap.microk8s.add-node
+   snap.microk8s.cilium
+   snap.microk8s.config
+   snap.microk8s.ctr
+   snap.microk8s.daemon-apiserver
+   snap.microk8s.daemon-apiserver-kicker
+   snap.microk8s.daemon-cluster-agent
+   snap.microk8s.daemon-containerd
+   snap.microk8s.daemon-control-plane-kicker
+   snap.microk8s.daemon-controller-manager
+   snap.microk8s.daemon-etcd
+   snap.microk8s.daemon-flanneld
+   snap.microk8s.daemon-kubelet
+   snap.microk8s.daemon-proxy
+   snap.microk8s.daemon-scheduler
+   snap.microk8s.dashboard-proxy
+   snap.microk8s.dbctl
+   snap.microk8s.disable
+   snap.microk8s.enable
+   snap.microk8s.helm
+   snap.microk8s.helm3
+   snap.microk8s.hook.configure
+   snap.microk8s.hook.install
+   snap.microk8s.hook.remove
+   snap.microk8s.inspect
+   snap.microk8s.istioctl
+   snap.microk8s.join
+   snap.microk8s.juju
+   snap.microk8s.kubectl
+   snap.microk8s.leave
+   snap.microk8s.linkerd
+   snap.microk8s.microk8s
+   snap.microk8s.refresh-certs
+   snap.microk8s.remove-node
+   snap.microk8s.reset
+   snap.microk8s.start
+   snap.microk8s.status
+   snap.microk8s.stop
+16 processes have profiles defined.
+0 processes are in enforce mode.
+16 processes are in complain mode.
+   /snap/microk8s/2035/kube-apiserver (237418) snap.microk8s.daemon-apiserver
+   /usr/bin/bash (2260) snap.microk8s.daemon-apiserver-kicker
+   /snap/microk8s/2035/bin/sleep (239092) snap.microk8s.daemon-apiserver-kicker
+   /usr/bin/bash (2170) snap.microk8s.daemon-cluster-agent
+   /snap/microk8s/2035/usr/bin/python3.5 (2364) snap.microk8s.daemon-cluster-agent
+   /snap/microk8s/2035/usr/bin/python3.5 (2595) snap.microk8s.daemon-cluster-agent
+   /usr/bin/bash (2200) snap.microk8s.daemon-control-plane-kicker
+   /snap/microk8s/2035/usr/bin/python3.5 (2371) snap.microk8s.daemon-control-plane-kicker
+   /snap/microk8s/2035/kube-controller-manager (2204) snap.microk8s.daemon-controller-manager
+   /snap/microk8s/2035/kubelet (238955) snap.microk8s.daemon-kubelet
+   /snap/microk8s/2035/kube-proxy (237511) snap.microk8s.daemon-proxy
+   /snap/microk8s/2035/kube-scheduler (2308) snap.microk8s.daemon-scheduler
+   /usr/bin/bash (239021) snap.microk8s.microk8s
+   /usr/bin/sudo (239037) snap.microk8s.microk8s
+   /usr/bin/bash (239038) snap.microk8s.microk8s
+   /usr/bin/python3.8 (239106) snap.microk8s.microk8s
+0 processes are unconfined but have a profile defined.

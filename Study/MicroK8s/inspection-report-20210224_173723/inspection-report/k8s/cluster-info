@@ -1,0 +1,3 @@
+[0;32mKubernetes control plane[0m is running at [0;33mhttps://127.0.0.1:16443[0m
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.

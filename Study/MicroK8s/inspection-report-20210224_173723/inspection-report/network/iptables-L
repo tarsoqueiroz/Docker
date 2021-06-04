@@ -1,0 +1,41 @@
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+KUBE-EXTERNAL-SERVICES  all  --  anywhere             anywhere             ctstate NEW /* kubernetes externally-visible service portals */
+KUBE-FIREWALL  all  --  anywhere             anywhere            
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+KUBE-FORWARD  all  --  anywhere             anywhere             /* kubernetes forwarding rules */
+KUBE-SERVICES  all  --  anywhere             anywhere             ctstate NEW /* kubernetes service portals */
+KUBE-EXTERNAL-SERVICES  all  --  anywhere             anywhere             ctstate NEW /* kubernetes externally-visible service portals */
+ACCEPT     all  --  10.1.0.0/16          anywhere             /* generated for MicroK8s pods */
+ACCEPT     all  --  anywhere             10.1.0.0/16          /* generated for MicroK8s pods */
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+KUBE-SERVICES  all  --  anywhere             anywhere             ctstate NEW /* kubernetes service portals */
+KUBE-FIREWALL  all  --  anywhere             anywhere            
+
+Chain KUBE-EXTERNAL-SERVICES (2 references)
+target     prot opt source               destination         
+
+Chain KUBE-FIREWALL (2 references)
+target     prot opt source               destination         
+DROP       all  --  anywhere             anywhere             /* kubernetes firewall for dropping marked packets */ mark match 0x8000/0x8000
+DROP       all  -- !localhost/8          localhost/8          /* block incoming localnet connections */ ! ctstate RELATED,ESTABLISHED,DNAT
+
+Chain KUBE-FORWARD (1 references)
+target     prot opt source               destination         
+DROP       all  --  anywhere             anywhere             ctstate INVALID
+ACCEPT     all  --  anywhere             anywhere             /* kubernetes forwarding rules */ mark match 0x4000/0x4000
+ACCEPT     all  --  anywhere             anywhere             /* kubernetes forwarding conntrack pod source rule */ ctstate RELATED,ESTABLISHED
+ACCEPT     all  --  anywhere             anywhere             /* kubernetes forwarding conntrack pod destination rule */ ctstate RELATED,ESTABLISHED
+
+Chain KUBE-KUBELET-CANARY (0 references)
+target     prot opt source               destination         
+
+Chain KUBE-PROXY-CANARY (0 references)
+target     prot opt source               destination         
+
+Chain KUBE-SERVICES (2 references)
+target     prot opt source               destination         

@@ -1,0 +1,6 @@
+Name      Version      Rev    Tracking       Publisher   Notes
+core      16-2.48.2.1  10823  latest/stable  canonical*  core
+core18    20210128     1988   latest/stable  canonical*  base
+lxd       4.0.5        19188  4.0/stable/…   canonical*  -
+microk8s  v1.20.2      2035   1.20/stable    canonical*  classic
+snapd     2.48.2.1     11036  latest/stable  canonical*  snapd

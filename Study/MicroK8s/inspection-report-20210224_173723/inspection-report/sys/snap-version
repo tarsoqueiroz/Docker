@@ -1,0 +1,5 @@
+snap    2.48.3+20.04
+snapd   2.48.3+20.04
+series  16
+ubuntu  20.04
+kernel  5.8.0-43-generic

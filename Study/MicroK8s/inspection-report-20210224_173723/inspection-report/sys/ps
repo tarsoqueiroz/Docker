@@ -1,0 +1,44 @@
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 14:11 ?        00:00:50 /sbin/init
+root          63       1  0 14:11 ?        00:02:44 /lib/systemd/systemd-journald
+root          99       1  0 14:11 ?        00:00:00 /lib/systemd/systemd-udevd
+root         324       1  0 14:11 ?        00:00:00 snapfuse /var/lib/snapd/snaps/core18_1988.snap /snap/core18/1988 -o ro,nodev,allow_other,suid
+root         325       1  0 14:11 ?        00:00:00 snapfuse /var/lib/snapd/snaps/lxd_19188.snap /snap/lxd/19188 -o ro,nodev,allow_other,suid
+root         326       1  0 14:11 ?        00:00:00 snapfuse /var/lib/snapd/snaps/snapd_11036.snap /snap/snapd/11036 -o ro,nodev,allow_other,suid
+systemd+     360       1  0 14:11 ?        00:00:00 /lib/systemd/systemd-networkd
+systemd+     362       1  0 14:11 ?        00:00:00 /lib/systemd/systemd-resolved
+root         396       1  0 14:11 ?        00:00:02 /usr/lib/accountsservice/accounts-daemon
+root         399       1  0 14:11 ?        00:00:00 /usr/sbin/cron -f
+message+     400       1  0 14:11 ?        00:00:08 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         403       1  0 14:11 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog       404       1  0 14:11 ?        00:01:18 /usr/sbin/rsyslogd -n -iNONE
+root         406       1  0 14:11 ?        00:00:44 /usr/lib/snapd/snapd
+root         408       1  0 14:11 ?        00:00:03 /lib/systemd/systemd-logind
+root         413       1  0 14:11 pts/0    00:00:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 linux
+daemon       414       1  0 14:11 ?        00:00:00 /usr/sbin/atd -f
+root         432       1  0 14:11 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         440       1  0 14:11 ?        00:00:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root         449       1  0 14:11 ?        00:00:00 /usr/lib/policykit-1/polkitd --no-debug
+root        1058       1  0 14:27 ?        00:01:28 snapfuse /var/lib/snapd/snaps/core_10823.snap /snap/core/10823 -o ro,nodev,allow_other,suid
+root        1182       1  0 14:27 ?        00:03:29 snapfuse /var/lib/snapd/snaps/microk8s_2035.snap /snap/microk8s/2035 -o ro,nodev,allow_other,suid
+root        2170       1  0 14:28 ?        00:00:00 /bin/bash /snap/microk8s/2035/run-cluster-agent-with-args
+root        2200       1  0 14:28 ?        00:00:00 /bin/bash /snap/microk8s/2035/control-plane-kicker
+root        2204       1  0 14:28 ?        00:05:14 /snap/microk8s/2035/kube-controller-manager --kubeconfig=/var/snap/microk8s/2035/credentials/controller.config --service-account-private-key-file=/var/snap/microk8s/2035/certs/serviceaccount.key --root-ca-file=/var/snap/microk8s/2035/certs/ca.crt --cluster-signing-cert-file=/var/snap/microk8s/2035/certs/ca.crt --cluster-signing-key-file=/var/snap/microk8s/2035/certs/ca.key --address=127.0.0.1 --use-service-account-credentials
+root        2260       1  0 14:28 ?        00:00:10 /bin/bash /snap/microk8s/2035/apiservice-kicker
+root        2308       1  0 14:28 ?        00:00:39 /snap/microk8s/2035/kube-scheduler --kubeconfig=/var/snap/microk8s/2035/credentials/scheduler.config --address=127.0.0.1
+root        2364    2170  0 14:28 ?        00:00:02 python3 /snap/microk8s/2035/usr/bin/gunicorn3 cluster.agent:app --bind 0.0.0.0:25000 --keyfile /var/snap/microk8s/2035/certs/server.key --certfile /var/snap/microk8s/2035/certs/server.crt --timeout 240
+root        2371    2200  0 14:28 ?        00:00:13 /snap/microk8s/2035/usr/bin/python3 /snap/microk8s/2035/scripts/wrappers/control-plane-kicker.py
+root        2595    2364  0 14:28 ?        00:00:00 python3 /snap/microk8s/2035/usr/bin/gunicorn3 cluster.agent:app --bind 0.0.0.0:25000 --keyfile /var/snap/microk8s/2035/certs/server.key --certfile /var/snap/microk8s/2035/certs/server.crt --timeout 240
+root       91989       0  0 15:35 pts/0    00:00:00 su -l
+root       91991       1  0 15:35 ?        00:00:00 /lib/systemd/systemd --user
+root       91992   91991  0 15:35 ?        00:00:00 (sd-pam)
+root       91997   91989  0 15:35 pts/0    00:00:00 -bash
+root      237332       1  0 17:35 ?        00:00:00 /snap/microk8s/2035/bin/containerd --config /var/snap/microk8s/2035/args/containerd.toml --root /var/snap/microk8s/common/var/lib/containerd --state /var/snap/microk8s/common/run/containerd --address /var/snap/microk8s/common/run/containerd.sock
+root      237418       1  0 17:36 ?        00:00:17 /snap/microk8s/2035/kube-apiserver --cert-dir=/var/snap/microk8s/2035/certs --service-cluster-ip-range=10.152.183.0/24 --authorization-mode=AlwaysAllow --service-account-key-file=/var/snap/microk8s/2035/certs/serviceaccount.key --client-ca-file=/var/snap/microk8s/2035/certs/ca.crt --tls-cert-file=/var/snap/microk8s/2035/certs/server.crt --tls-private-key-file=/var/snap/microk8s/2035/certs/server.key --kubelet-client-certificate=/var/snap/microk8s/2035/certs/server.crt --kubelet-client-key=/var/snap/microk8s/2035/certs/server.key --secure-port=16443 --token-auth-file=/var/snap/microk8s/2035/credentials/known_tokens.csv --insecure-port=0 --storage-backend=dqlite --storage-dir=/var/snap/microk8s/2035/var/kubernetes/backend/ --allow-privileged=true --service-account-issuer=https://kubernetes.default.svc --service-account-signing-key-file=/var/snap/microk8s/2035/certs/serviceaccount.key --feature-gates=RemoveSelfLink=false --requestheader-client-ca-file=/var/snap/microk8s/2035/certs/front-proxy-ca.crt --requestheader-allowed-names=front-proxy-client --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --proxy-client-cert-file=/var/snap/microk8s/2035/certs/front-proxy-client.crt --proxy-client-key-file=/var/snap/microk8s/2035/certs/front-proxy-client.key
+root      237511       1  0 17:36 ?        00:00:00 /snap/microk8s/2035/kube-proxy --kubeconfig=/var/snap/microk8s/2035/credentials/proxy.config --cluster-cidr=10.1.0.0/16 --healthz-bind-address=127.0.0.1
+root      238955       1  0 17:37 ?        00:00:00 /snap/microk8s/2035/kubelet --kubeconfig=/var/snap/microk8s/2035/credentials/kubelet.config --cert-dir=/var/snap/microk8s/2035/certs --client-ca-file=/var/snap/microk8s/2035/certs/ca.crt --anonymous-auth=false --network-plugin=cni --root-dir=/var/snap/microk8s/common/var/lib/kubelet --fail-swap-on=false --cni-conf-dir=/var/snap/microk8s/2035/args/cni-network/ --cni-bin-dir=/var/snap/microk8s/2035/opt/cni/bin/ --feature-gates=DevicePlugins=true --eviction-hard=memory.available<100Mi,nodefs.available<1Gi,imagefs.available<1Gi --container-runtime=remote --container-runtime-endpoint=/var/snap/microk8s/common/run/containerd.sock --containerd=/var/snap/microk8s/common/run/containerd.sock --node-labels=microk8s.io/cluster=true --authentication-token-webhook=true
+root      239021   91997  0 17:37 pts/0    00:00:00 /bin/bash /snap/microk8s/2035/microk8s.wrapper inspect
+root      239037  239021  0 17:37 pts/0    00:00:00 sudo SNAP_DATA=/var/snap/microk8s/2035 /snap/microk8s/2035/inspect.sh
+root      239038  239037  0 17:37 pts/0    00:00:00 bash /snap/microk8s/2035/inspect.sh
+root      239092    2260  0 17:37 ?        00:00:00 sleep 3
+root      239108  239038  0 17:37 pts/0    00:00:00 ps -ef
