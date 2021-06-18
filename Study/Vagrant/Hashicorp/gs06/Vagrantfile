@@ -1,0 +1,31 @@
+BOX_IMAGE_PRINCIPAL = "generic/alpine312"
+BOX_IMAGE_NODES     = "generic/alpine39"
+NODE_COUNT          = 3
+
+Vagrant.configure("2") do |config|
+  
+  config.vm.define "k3s-0" do |subconfig|
+    subconfig.vm.box      = BOX_IMAGE_PRINCIPAL
+    subconfig.vm.hostname = "k3s-0"
+    subconfig.vm.network    "public_network", type: "dhcp", bridge: "enp4s0"
+    subconfig.vm.disk       :disk, name: "k3s-0a", size: "2GB"
+    subconfig.vm.provider "virtualbox" do |vbox|
+      vbox.memory = 2048
+      vbox.cpus   = 2
+    end
+  end
+  
+  (1..NODE_COUNT).each do |i|
+    config.vm.define "k3s-#{i}" do |subconfig|
+      subconfig.vm.box      = BOX_IMAGE_NODES
+      subconfig.vm.hostname = "k3s-#{i}"
+      subconfig.vm.network    "public_network", type: "dhcp", bridge: "enp4s0"
+      subconfig.vm.disk       :disk, name: "k3s-#{i}a", size: "1GB"
+      subconfig.vm.provider "virtualbox" do |vbox|
+        vbox.memory = 1024
+        vbox.cpus   = 1
+      end
+    end
+  end
+
+end
