@@ -2,7 +2,7 @@ const connectToDatabase = () => {
   const dummyPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve();
-    }, 1000);
+    }, 5000);
   });
 
   return dummyPromise;
