@@ -1,0 +1,31 @@
+# Alpine version
+#BOX_IMAGE  = "generic/alpine312"
+#PROVISION  = "bootstrap-alpine.sh"
+# Ubuntu version
+BOX_IMAGE  = "ubuntu/focal64"
+PROVISION  = "bootstrap-ubuntu.sh"
+# Device
+HOST_NIC   = "enp4s0"
+NODE_NAME  = "k3s"
+NODE_COUNT = 3
+
+Vagrant.configure("2") do |config|
+  
+  (0..(NODE_COUNT - 1)).each do |_sx1|
+    config.vm.define "#{NODE_NAME}#{_sx1}" do |subconfig|
+
+      subconfig.vm.box         = BOX_IMAGE
+      subconfig.vm.synced_folder "./k3s.cluster", "/home/vagrant/k3s.cluster"
+      subconfig.vm.provision     "shell", path: "#{PROVISION}", privileged: true
+      subconfig.vm.hostname    = "#{NODE_NAME}#{_sx1}"
+      subconfig.vm.network       "public_network", type: "dhcp", bridge: "#{HOST_NIC}"
+
+      subconfig.vm.provider      "virtualbox" do |vbox|
+        vbox.name   = "#{NODE_NAME}#{_sx1}"
+        vbox.memory = 2048
+        vbox.cpus   = 2
+      end
+
+    end
+  end
+end
