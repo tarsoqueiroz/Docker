@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/k3s.cluster":{"guestpath":"/home/vagrant/k3s.cluster","hostpath":"/Data/Learn/Docker/Study/K3S/k3s.cluster","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Data/Learn/Docker/Study/K3S","disabled":false,"__vagrantfile":true}}}
