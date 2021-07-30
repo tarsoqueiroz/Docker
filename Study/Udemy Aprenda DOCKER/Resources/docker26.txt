@@ -1,0 +1,5 @@
+docker service create --name web-server --replicas 3 -p 8080:80 httpd
+docker service ps web-server
+docker service rm web-server
+
+docker node update --availability drain [nome]

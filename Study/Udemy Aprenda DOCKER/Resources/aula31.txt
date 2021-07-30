@@ -1,0 +1,71 @@
+docker run -e MYSQL_ROOT_PASSWORD=Senha123 -e MYSQL_DATABASE=meubanco --name mysql-A -d -p 3306:3306 --mount type=volume,src=data,dst=/var/lib/mysql/ mysql:5.7
+
+================================
+SQL
+================================
+
+CREATE TABLE dados (
+    AlunoID int,
+    Nome varchar(50),
+    Sobrenome varchar(50),
+    Endereco varchar(150),
+    Cidade varchar(50)
+);
+
+===============================
+
+
+
+=====================
+docker-composer.yml
+=====================
+
+version: "3.7"
+
+services:
+  web:
+
+    image: webdevops/php-apache:alpine-php7
+    ports:
+      - "80:80"
+    volumes:
+      - app:/app
+
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+
+  phpmyadmin:
+
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: "Senha123"
+      PMA_HOST: "54.234.153.24"
+
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+ ports:
+      - "8080:80"
+    volumes:
+      - php-ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
+
+
+
+volumes:
+
+  app:
+  php-ini:
+
+====================================================================
+
+
+docker stack deploy -c docker-compose.yml php-app
+
+

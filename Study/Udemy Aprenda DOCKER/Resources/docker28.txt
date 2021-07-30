@@ -1,0 +1,14 @@
+docker-machine create --driver amazonec2 --amazonec2-region "us-east-1" --amazonec2-zone a --amazonec2-vpc-id "vpc-id" --amazonec2-subnet-id "subnet-id"  aws-1
+
+docker-machine ssh aws-1
+
+docker swarm init
+
+docker node promote [nome]
+
+docker create volume app
+docker create volume ls
+
+cd /var/lib/docker/volumes/app
+
+wget http://site1368633667.hospedagemdesites.ws/site1.zip

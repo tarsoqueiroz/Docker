@@ -1,0 +1,9 @@
+docker node ls   
+docker service ls
+
+docker swarm join-token worker             
+
+docker node promote [nome]
+docker node demote [nome]
+
+

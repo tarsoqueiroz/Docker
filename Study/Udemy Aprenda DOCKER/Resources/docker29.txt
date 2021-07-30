@@ -1,0 +1,28 @@
+docker create volume app
+docker create volume ls
+
+cd /var/lib/docker/volumes/app
+
+wget http://site1368633667.hospedagemdesites.ws/site1.zip
+
+
+docker service create --name web-server --replicas 3 -dt -p 8080:80 --mount type=volume,src=app,dst=/usr/local/apache2/htdocs/ httpd
+
+
+sudo apt-get install nfs-server
+
+
+nano /etc/exports 
+	cd /var/lib/docker/volumes/app/_data *(rw,sync,subtree_check)
+
+exportfs -ar
+
+
+
+aws2
+======
+
+sudo apt-get install nfs-common
+showmount -e [ip]
+mount [ip]:/var/lib/docker/volumes/app/_data /var/lib/docker/volumes/app/_data 
+
