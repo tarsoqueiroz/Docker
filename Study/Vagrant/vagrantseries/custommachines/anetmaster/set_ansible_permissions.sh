@@ -1,1 +1,0 @@
-chown ansible.ansible -R /etc/ansible
