@@ -1,6 +1,10 @@
 docker node ls   
 docker service ls
 
+docker node update --availability drain [nome]
+docker node update --availability pause [nome]
+docker node update --availability active [nome]
+
 docker swarm join-token worker             
 
 docker node promote [nome]
