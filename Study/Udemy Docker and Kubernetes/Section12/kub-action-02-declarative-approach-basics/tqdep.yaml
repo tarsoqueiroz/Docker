@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-ing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-ing
+  template:
+    metadata: 
+      labels:
+        app: app-ing
+    spec: 
+      containers:
+        - name: app-ing
+          image: tarsoqueiroz/udemy-dockubmax:s12.01
